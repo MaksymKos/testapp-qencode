@@ -24,7 +24,7 @@ export async function loginUser({ email, password }: LoginUserType) {
 export async function resetUserPassword(email: string) {
   const { data } = await axios.post(resetUserPasswordPath, {
     email,
-    redirect_url: `${process.env.REACT_APP_BASE_URL}#/newpass`,
+    redirect_url: `${window.location.origin}/#/newpass`,
   });
 
   return data;
